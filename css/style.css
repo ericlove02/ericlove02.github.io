@@ -170,3 +170,8 @@
   animation: 1s ease-out 0s 1 fadeIn;
   animation-fill-mode: both;
 }
+
+.slide-up-button {
+  animation: .5s ease-out 0s 1 slideUp;
+  animation-fill-mode: both;
+}
