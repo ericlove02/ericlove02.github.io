@@ -38,6 +38,7 @@
     <script src="./ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="./cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
     <script src="./cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <!-- LOCAL -->
     <script src="scripts/pt.min.js"></script>
@@ -47,23 +48,23 @@
 
   <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-      <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="index.html"><img src="images/archive-logo.png" style="width:180px;"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              Menu
-              <i class="fas fa-bars"></i>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                  <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                  <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="articles.html">Articles</a></li>
-                  <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about-us.html">About</a></li>
-                  <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="mailto:">Contact</a></li>
-              </ul>
-          </div>
-      </div>
-  </nav>
+    <nav class="navbar navbar-expand-lg navbar-light slide-in-top" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="index.html"><img src="images/archive-logo.png" style="width:180px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                
+                <i class="fas fa-bars fa-1x"></i></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="articles.html">Articles</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about-us.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="mailto:">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
   
@@ -87,7 +88,7 @@
   <div style="height:30px"></div>
 
     <!-- Main Content-->
-    <div class="container px-4 px-lg-5">
+    <div class="container px-4 px-lg-5 fade-in">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <!-- Post preview-->
@@ -217,6 +218,15 @@
             </div>
         </div>
     </footer>
+
+    <button
+        type="button"
+        class="btn btn-floating btn-lg"
+        id="btn-back-to-top"
+        >
+    <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

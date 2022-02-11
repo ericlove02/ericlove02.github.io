@@ -129,9 +129,29 @@
     display: inline;
   }
 
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  #btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    color:black;
+    background-color: white;
+    border-color: gray;
+    border-radius: 25px;
+  }
 
 
-
+/* animations */
+.slide-in-right {
+  animation: 1s ease-out 0s 1 slideInRight;
+  animation-fill-mode: both;
+}
 .slide-in-right-1 {
   animation: .8s ease-out .4s 1 slideInRight;
   animation-fill-mode: both;
