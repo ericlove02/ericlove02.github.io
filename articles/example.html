@@ -69,20 +69,27 @@
   </nav>
 
   <!-- Page Header-->
-  <header class="masthead" style="background-size:cover;background-image: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(0,0,0,0.2) 100%),url('../images/cold_war.jpg')">
+  <header class="masthead" style="background-size:cover;background-image: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(0,0,0,0.2) 100%),url('../images/image1.jpg')">
     <div class="container position-relative px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="site-heading">
-                    <div style="padding: 20%;">
-                      <h1 id="title"></h1>
-                      <span class="subheading" id="credits"></span>
+                    <div style="padding: 15%;">
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
   </header>
+
+  <div class="px-4 px-lg-5 " style="background: #004f99b2; color:white">
+      <div class="row gx-4 gx-lg-5 justify-content-center slide-in-right-1">
+          <div class="col-md-9 col-lg-8 col-xl-7" style="padding:15px;">
+              <h2>Interview</h2>
+          </div>
+      </div>
+  </div>
 
   <div class="container-fluid">    
     <div class="row content">
@@ -92,7 +99,11 @@
       <div class="col-sm-8" style="align-content: left;"> 
         <!--<hr style="width:100px">-->
         <br>
-        <div id="content" class="slide-in-right"></div>
+        <h1 id="title" class="slide-in-right"></h1>
+        <div id="date" class="slide-in-right"></div>
+        <div id="credits" class="slide-in-right"></div>
+        <br>
+        <div id="content" class="slide-in-right" style="text-indent:30px"></div>
       </div>
       <div class="col-sm-2 sidenav">
         
@@ -110,18 +121,20 @@
 
   <script>
     // CHANGE THESE TO WRITE ARTICLE
-    var title = "The cold war was good";
-    var credits = "Written by benajmin brody <br> Edited by joeseph mama";
+    var title = "Corruption is not good";
+    var credits = "Interviewed by <a href=\"../about-us.html\">Ben Brody</a>, edited by <a href=\"../about-us.html\">Ben Brody</a>";
+    var date = "February 12, 2022";
     var content = `
+        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p></blockquote>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <img src="../images/cold_war.jpg" caption="not cool" style="display: block;margin-left: auto;margin-right: auto;width: 70%;" />
-        <img src="../images/archive-logo.png" caption="not cool" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" />
-        <blockquote><p>That shit was fr not cool. idrk what happened but not cool man</p></blockquote>
-        <p>more stuff about how uncool it was, thanks for reading</p>
+        <img src="../images/image1.jpg" caption="not cool" style="display: block;margin-left: auto;margin-right: auto;width: 70%;" />
+        <br><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         `;
 
 
     document.getElementById("title").innerHTML = title;
+    document.getElementById("date").innerHTML = date;
     document.getElementById("credits").innerHTML = credits;
     document.getElementById("content").innerHTML = content;
   </script>
