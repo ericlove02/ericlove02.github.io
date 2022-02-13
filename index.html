@@ -101,75 +101,8 @@
     <!-- Main Content-->
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center slide-in-right-2">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-                <h1 style="margin-left:-15px;">Highlighted articles</h1>
-                <hr width="130px" style="margin-left:-15px;">
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <img src="images/image1.jpg" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                    <a href="articles/example.html" class="link-unstyled">
-                        <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                    </a>
-                    
-                    <p class="post-meta" style="font-size:12px;">
-                        February 10, 2022
-                        <br>
-                        Interviewed by <a href="about-us.html">Ben Brody</a>, edited by <a href="about-us.html">Ben Brody</a>
-                    </p>
-                            
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <img src="images/image2.png" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                    <a href="articles/example.html" class="link-unstyled">
-                        <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                    </a>
-                    
-                    <p class="post-meta" style="font-size:12px;">
-                        February 10, 2022
-                        <br>
-                        Interviewed by <a href="about-us.html">Ben Brody</a>, edited by <a href="about-us.html">Ben Brody</a>
-                    </p>
-                            
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <img src="images/image3.png" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                    <a href="articles/example.html" class="link-unstyled">
-                        <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                    </a>
-                    
-                    <p class="post-meta" style="font-size:12px;">
-                        February 10, 2022
-                        <br>
-                        Interviewed by <a href="about-us.html">Ben Brody</a>, edited by <a href="about-us.html">Ben Brody</a>
-                    </p>
-                            
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Post preview--> 
-                <div class="post-preview">
-                    <img src="images/image4.jpg" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                    <a href="articles/example.html" class="link-unstyled">
-                        <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                    </a>
-                    
-                    <p class="post-meta" style="font-size:12px;">
-                        February 10, 2022
-                        <br>
-                        Interviewed by <a href="about-us.html">Ben Brody</a>, edited by <a href="about-us.html">Ben Brody</a>
-                    </p>
-                            
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
-                <!-- Pager-->
-                <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="articles.html" style="background-color:#004f99b2; border-color:#004f99b2;">All Articles →</a></div>
+            <div class="col-md-10 col-lg-8 col-xl-7" id="highlight-content">
+                
             </div>
         </div>
     </div>
@@ -177,13 +110,13 @@
     <footer class="border-top" style="background-color: #004f99b2;">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-5 col-lg-4">
+                <!-- <div class="col-md-5 col-lg-4">
                     <img src="images/archive-logo.png" width="250px" />
                  </div>
                  <div class="col-md-5 col-lg-4">
                     <a href="mailto:" class="link-unstyled" style="font-size:20px; color: white;margin-top: 20px;">Contact</a>
-                 </div>
-                 <div class="small text-center text-muted fst-italic" style="color:white">Copyright &copy; Your Website 2021</div>
+                 </div> -->
+                 <div class="small text-center fst-italic" style="color:white;padding:30px;">Copyright &copy; The Archives at American University</div>
                
             </div>
         </div>
@@ -201,5 +134,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script src="js/articles.js"></script>
+    <script>
+        window.onload = function(){ 
+            let contentDiv = document.getElementById("highlight-content");
+            let content = "";
+            content += `<h1 style="margin-left:-15px;">Highlighted articles</h1>
+                <hr width="130px" style="margin-left:-15px;">`;
+            for (i = 0; i < articles.length; i++) {
+                if(articles[i][6] == "T"){
+                    content += `<div class="post-preview" onclick="openArticle(${i});">
+                        
+                        <img src="images/${articles[i][4]}"  style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
+                        <a href="#" class="link-unstyled">
+                            <h2 class="post-title">${articles[i][0]}</h2>
+                        </a>
+                        
+                        <p class="post-meta" style="font-size:12px;">
+                            ${articles[i][3]}
+                            <br>
+                            Interviewed by <a href="about-us.html">${articles[i][1]}</a>, edited by <a href="about-us.html">${articles[i][2]}</a>
+                        </p>
+                        <!-- Divider-->
+                        <hr class="my-4" />  
+                    </div>`; 
+                }
+            }
+            contentDiv.innerHTML = content; 
+
+        }
+    </script>
 </body>
 </html>

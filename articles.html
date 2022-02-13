@@ -146,10 +146,10 @@
             <div class="col-md-10 col-lg-8 col-xl-7" id="article-content">
                 
                     <!-- Post preview-->
-                    <div class="post-preview">
+                    <div class="post-preview" onclick="openArticle(0);">
                         
-                        <img src="images/image1.jpg" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                        <a href="articles/example.html" class="link-unstyled">
+                        <img src="images/image1.jpg"  style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
+                        <a href="#" class="link-unstyled">
                             <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
                         </a>
                         
@@ -162,7 +162,7 @@
                         <hr class="my-4" />  
                     </div>
                     <!-- Post preview-->
-                    <div class="post-preview">
+                    <div class="post-preview" onclick="openArticle(1);">
                         <img src="images/image2.png" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
                         <a href="articles/example.html" class="link-unstyled">
                             <h2 class="post-title">Corruption in the southeast is not good</h2>
@@ -178,7 +178,7 @@
                     </div>
                     
                     <!-- Post preview-->
-                    <div class="post-preview">
+                    <div class="post-preview" onclick="openArticle(2);">
                         <img src="images/image3.png" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
                         <a href="articles/example.html" class="link-unstyled">
                             <h2 class="post-title">High cost of living is causing sadness</h2>
@@ -194,7 +194,7 @@
                     </div>
                     
                     <!-- Post preview--> 
-                    <div class="post-preview">
+                    <div class="post-preview" onclick="openArticle(3);">
                         <img src="images/image4.jpg" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
                         <a href="articles/example.html" class="link-unstyled">
                             <h2 class="post-title">Kanye release diss track on corruption</h2>
@@ -213,16 +213,17 @@
         </div>
     </div>
     <!-- Footer-->
+    <!-- Footer-->
     <footer class="border-top" style="background-color: #004f99b2;">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-5 col-lg-4">
+                <!-- <div class="col-md-5 col-lg-4">
                     <img src="images/archive-logo.png" width="250px" />
                  </div>
                  <div class="col-md-5 col-lg-4">
                     <a href="mailto:" class="link-unstyled" style="font-size:20px; color: white;margin-top: 20px;">Contact</a>
-                 </div>
-                 <div class="small text-center text-muted fst-italic" style="color:white">Copyright &copy; Your Website 2021</div>
+                 </div> -->
+                 <div class="small text-center fst-italic" style="color:white;padding:30px;">Copyright &copy; The Archives at American University</div>
                
             </div>
         </div>
@@ -239,6 +240,7 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
+    <script src="js/articles.js"></script>
     <script src="js/scripts.js"></script>
     <script>
         function searchFunc() {
@@ -260,6 +262,33 @@
             }
           }
         }
+
+        window.onload = function(){ 
+            console.log("here");
+            let contentDiv = document.getElementById("article-content");
+            console.log(articles); 
+            let content = "";
+            for (i = 0; i < articles.length; i++) {
+                content += `<div class="post-preview" onclick="openArticle(${i});">
+                        
+                        <img src="images/${articles[i][4]}"  style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
+                        <a href="#" class="link-unstyled">
+                            <h2 class="post-title">${articles[i][0]}</h2>
+                        </a>
+                        
+                        <p class="post-meta" style="font-size:12px;">
+                            ${articles[i][3]}
+                            <br>
+                            Interviewed by <a href="about-us.html">${articles[i][1]}</a>, edited by <a href="about-us.html">${articles[i][2]}</a>
+                        </p>
+                        <!-- Divider-->
+                        <hr class="my-4" />  
+                    </div>`; 
+            }
+            contentDiv.innerHTML = content; 
+
+        }
+
         </script>
 </body>
 </html>
