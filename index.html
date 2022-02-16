@@ -39,7 +39,7 @@
     <script src="./cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
     <script src="./cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
     <!-- LOCAL -->
     <script src="scripts/pt.min.js"></script>
     <script src="scripts/index.js"></script>
@@ -50,7 +50,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light slide-in-top" id="mainNav">
       <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="index.html"><img src="images/archive-logo.png" style="width:180px;"></a>
+          <a class="navbar-brand" href="index.html"><img src="images/archives-logo-black.png" style="width:180px;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               
               <i class="fas fa-bars fa-1x"></i></i>
@@ -76,8 +76,8 @@
               <div class="col-md-10 col-lg-8 col-xl-7">
                   <div class="site-heading fade-in">
                       <div style="padding: 20% 10%;">
-                        <h1 style="font-size:80px;font-family:Bookman, URW Bookman L, serif;">The Archives</h1>
-                        <h3 class="subheading" style="font-size:30px;font-family:Bookman, URW Bookman L, serif">@ American University</h3>
+                        <h1 style="font-size:70px;font-family:'Lora', serif;">The Archives</h1>
+                        <h3 class="subheading" style="font-size:30px;font-family:'Lora', serif;">@ American University</h3>
                       </div>
                   </div>
               </div>
@@ -88,8 +88,8 @@
     <div class="px-4 px-lg-5 " style="background: #004f99b2; color:white">
         <div class="row gx-4 gx-lg-5 justify-content-center slide-in-right-1">
             <div class="col-md-9 col-lg-8 col-xl-7" style="padding:40px;">
-                <p>Spring 2022 Theme</p>
-                <h2>Corruption</h2>
+                <p style="font-family:'Noto Serif', serif">Spring - Fall 2022 Theme</p>
+                <h2 style="font-family:'Lora', serif;font-weight:600;font-style:italic;font-size:36px;">Corruption</h2>
                 <hr width="180px">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.</p>
             </div>
@@ -99,7 +99,7 @@
   <div style="height:30px"></div>
 
     <!-- Main Content-->
-    <div class="container px-4 px-lg-5">
+    <!-- <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center slide-in-right-2">
             <div class="col-md-10 col-lg-8 col-xl-7" id="highlight-content">
                 
@@ -108,9 +108,23 @@
                 <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="articles.html" style="background-color:#004f99b2; border-color:#004f99b2;">All Articles →</a></div>
             </div>
         </div>
-    </div>
+    </div> -->
+    
+    <section>
+        <div class="container">
+            <h1 style="margin-left:-15px;">Highlighted Articles</h1>
+            <hr width="130px" style="margin-left:-15px;">
+            <div class="row" id="highlight-content">
+                <!-- main content added here from onload script -->
+            </div>
+        </div>
+        </section>
+        <br>
+
+
+
     <!-- Footer-->
-    <footer class="border-top" style="background-color: #004f99b2;">
+    <footer class="border-top" style="background-color: #4d84b7;">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <!-- <div class="col-md-5 col-lg-4">
@@ -142,25 +156,41 @@
         window.onload = function(){ 
             let contentDiv = document.getElementById("highlight-content");
             let content = "";
-            content += `<h1 style="margin-left:-15px;">Highlighted articles</h1>
-                <hr width="130px" style="margin-left:-15px;">`;
+            
             for (i = 0; i < articles.length; i++) {
-                if(articles[i][6] == "T"){
-                    content += `<div class="post-preview" onclick="openArticle(${i});">
-                        
-                        <img src="images/${articles[i][4]}"  style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                        <a href="#" class="link-unstyled">
-                            <h2 class="post-title">${articles[i][0]}</h2>
-                        </a>
-                        
-                        <p class="post-meta" style="font-size:12px;">
-                            ${articles[i][3]}
-                            <br>
-                            Interviewed by <a href="about-us.html">${articles[i][1]}</a>, edited by <a href="about-us.html">${articles[i][2]}</a>
-                        </p>
-                        <!-- Divider-->
-                        <hr class="my-4" />  
-                    </div>`; 
+                if(articles[i][7] == "T"){
+                    let title = articles[i][0].split(" "); 
+                    if(title.length >= 10){
+                        title = title.slice(0, 10);
+                        title += "...";
+                    }
+                    title += ""; 
+                    let out_title = title.replace(/,/g, ' ');
+
+                    let date = articles[i][4];
+                    date = date.split(" ");
+                    let day = date[1].replace(/,/g, '');
+                    let month = date[0].substr(0,3);
+
+                    content += `<div class="col-lg-4 col-md-6 mb-2-6">
+                    <article class="card card-style2">
+                        <div class="card-img">
+                            <img class="rounded-top" src="images/${articles[i][5]}" style="overflow:hidden;width:100%;max-height:160px; " alt="...">
+                            <div class="date"><span>${day}</span>${month}</div> 
+                        </div>
+                        <div class="card-body">
+                            <h3 class="h5"><a href="#!" onclick="openArticle(${i})">${out_title}</a></h3> 
+                            <p class="display-30">Loft therapy will be a thing of the past and here's why.</p>
+                            
+                        </div>
+                        <div class="card-footer"> 
+                            <ul>
+                                <li><a href="about-us.html"><i class="fa fa-microphone"></i>${articles[i][2]}</a></li>
+                                <li><a href="about-us.html"><i class="fa fa-pen"></i>${articles[i][3]}</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>`; 
                 }
             }
             contentDiv.innerHTML = content; 

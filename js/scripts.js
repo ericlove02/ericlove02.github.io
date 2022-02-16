@@ -272,7 +272,7 @@ function openArticle(articleNum){
       <!-- Navigation-->
       <nav class="navbar navbar-expand-lg navbar-light " id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="../index.html"><img src="../images/archive-logo.png" style="width:180px;"></a>
+            <a class="navbar-brand" href="../index.html"><img src="../images/archives-logo-black.png" style="width:180px;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 
                 <i class="fas fa-bars"></i>
@@ -289,7 +289,7 @@ function openArticle(articleNum){
     </nav>
   
     <!-- Page Header-->
-    <header class="masthead" style="background-size:cover;background-image: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(0,0,0,0.2) 100%),url('../images/${articles[articleNum][4]}')">
+    <header class="masthead" style="background-size:cover;background-image: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%,rgba(0,0,0,0.2) 100%),url('../images/${articles[articleNum][5]}')">
       <div class="container position-relative px-4 px-lg-5">
           <div class="row gx-4 gx-lg-5 justify-content-center">
               <div class="col-md-10 col-lg-8 col-xl-7">
@@ -306,7 +306,7 @@ function openArticle(articleNum){
     <div class="px-4 px-lg-5 " style="background: #004f99b2; color:white">
         <div class="row gx-4 gx-lg-5 justify-content-center slide-in-right-1">
             <div class="col-md-9 col-lg-8 col-xl-7" style="padding:15px;">
-                <h2>Interview</h2>
+                <h2 style="font-family:'Lora', serif;font-weight:400;font-style:italic;font-size:32px;">Interview</h2>
             </div>
         </div>
     </div>
@@ -316,14 +316,14 @@ function openArticle(articleNum){
         <div class="col-sm-2 sidenav">
           
         </div>
-        <div class="col-sm-8" style="align-content: left;"> 
+        <div class="col-sm-8" style="align-content: left;font-family:'Noto Serif '"> 
           <!--<hr style="width:100px">-->
           <br>
           <h1 id="title" class="slide-in-right">${articles[articleNum][0]}</h1>
-          <div id="date" class="slide-in-right">${articles[articleNum][3]}</div>
-          <div id="credits" class="slide-in-right">Interviewed by ${articles[articleNum][1]}, edited by ${articles[articleNum][2]}</div>
+          <div id="date" class="slide-in-right">${articles[articleNum][4]}</div>
+          <div id="credits" class="slide-in-right">Interviewed by ${articles[articleNum][2]}, edited by ${articles[articleNum][3]}</div>
           <br>
-          <div id="content" class="slide-in-right" style="text-indent:30px">${articles[articleNum][5]}</div>
+          <div id="content" class="slide-in-right" style="text-indent:30px;font-size:larger">${articles[articleNum][6]}</div>
         </div>
         <div class="col-sm-2 sidenav">
           
