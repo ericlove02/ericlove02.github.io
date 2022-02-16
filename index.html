@@ -118,7 +118,7 @@
                 <!-- main content added here from onload script -->
             </div>
         </div>
-        </section>
+    </section>
         <br>
         <div class="col-md-9 col-lg-9">
             <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="articles.html" style="background-color:#004f99b2; border-color:#004f99b2;">All Articles →</a></div>
@@ -166,15 +166,14 @@
                     let title = articles[i][0].split(" "); 
                     if(title.length >= 10){
                         title = title.slice(0, 10);
-                        title += "...";
+                        title.push("...");
                     }
-                    title += ""; 
-                    let out_title = title.replace(/,/g, ' ');
+                    let out_title = title.join(" ");
 
                     let date = articles[i][4];
                     date = date.split(" ");
                     let day = date[1].replace(/,/g, '');
-                    let month = date[0].substr(0,3);
+                    let month = date[0].substr(0,3); 
 
                     content += `<div class="col-lg-4 col-md-6 mb-2-6">
                     <article class="card card-style2">
@@ -184,7 +183,7 @@
                         </div>
                         <div class="card-body">
                             <h3 class="h5"><a href="#!" onclick="openArticle(${i})">${out_title}</a></h3> 
-                            <p class="display-30">Loft therapy will be a thing of the past and here's why.</p>
+                            <p class="display-30">${articles[i][1]}</p>
                             
                         </div>
                         <div class="card-footer"> 

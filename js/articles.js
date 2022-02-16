@@ -1,6 +1,14 @@
 let articles = []
 
 
+articles.push(["Why I will never call my step-dad, \"Dad\"", "I will never accept you, Brad", "Eric Brody", "Ben Brody", "February 13, 2022", "team2.jpg", 
+`
+As military buildups continue by both Russian and NATO forces around Ukraine, European leaders have gone into diplomatic overdrive this week in an effort to mediate the Ukrainian standoff and avert war. French President Emmanuel Macron held talks with Russian President Vladimir Putin in Moscow on Feb. 7 before visiting Kyiv the next day to speak with Ukrainian President Volodymyr Zelensky, while German Chancellor Olaf Scholz traveled across the Atlantic to meet with U.S. President Joe Biden and try to get on the same page as Washington.
+<br> Such mediation efforts are likely only to intensify in the coming days, with many observers circling Feb. 20 as a potential decision point for Russia. That date marks the end of Russian military drills with Belarus, the end of the Beijing Winter Olympics, and the anniversary of Moscow's invasion of Crimea back in 2014.
+<br>And that last anniversary is a reminder that the Ukrainian conflict has endured for nearly eight years despite various efforts at international mediation. Why has peace proved so elusive and mediation largely failed? And does that offer any lessons, other than pessimism, for moving forward?
+`, "F"]);
+
+
 articles.push(["Title", "words", "joe", "eric", "February 15, 2022", "team1.jpg", 
 `
 paragraph 1

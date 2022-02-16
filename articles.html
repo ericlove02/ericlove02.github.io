@@ -141,77 +141,13 @@
 
 
     <!-- Main Content-->
-    <div class="container px-4 px-lg-5 fade-in">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7" id="article-content">
-                
-                    <!-- Post preview-->
-                    <div class="post-preview" onclick="openArticle(0);">
-                        
-                        <img src="images/image1.jpg"  style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                        <a href="#" class="link-unstyled">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                        </a>
-                        
-                        <p class="post-meta" style="font-size:12px;">
-                            February 10, 2022
-                            <br>
-                            Interviewed by <a href="about-us.html">Ben Brody</a>, edited by <a href="about-us.html">Ben Brody</a>
-                        </p>
-                        <!-- Divider-->
-                        <hr class="my-4" />  
-                    </div>
-                    <!-- Post preview-->
-                    <div class="post-preview" onclick="openArticle(1);">
-                        <img src="images/image2.png" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                        <a href="articles/example.html" class="link-unstyled">
-                            <h2 class="post-title">Corruption in the southeast is not good</h2>
-                        </a>
-                        
-                        <p class="post-meta" style="font-size:12px;">
-                            February 10, 2022
-                            <br>
-                            Interviewed by <a href="about-us.html">Ben Brody</a>, edited by <a href="about-us.html">Ben Brody</a>
-                        </p>
-                        <!-- Divider-->
-                        <hr class="my-4" />     
-                    </div>
-                    
-                    <!-- Post preview-->
-                    <div class="post-preview" onclick="openArticle(2);">
-                        <img src="images/image3.png" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                        <a href="articles/example.html" class="link-unstyled">
-                            <h2 class="post-title">High cost of living is causing sadness</h2>
-                        </a>
-                        
-                        <p class="post-meta" style="font-size:12px;">
-                            February 10, 2022
-                            <br>
-                            Interviewed by <a href="about-us.html">Ben Brody</a>, edited by <a href="about-us.html">Ben Brody</a>
-                        </p>
-                        <!-- Divider-->
-                        <hr class="my-4" />     
-                    </div>
-                    
-                    <!-- Post preview--> 
-                    <div class="post-preview" onclick="openArticle(3);">
-                        <img src="images/image4.jpg" style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                        <a href="articles/example.html" class="link-unstyled">
-                            <h2 class="post-title">Kanye release diss track on corruption</h2>
-                        </a>
-                        
-                        <p class="post-meta" style="font-size:12px;">
-                            February 10, 2022
-                            <br>
-                            Interviewed by <a href="about-us.html">Ben Brody</a>, edited by <a href="about-us.html">Ben Brody</a>
-                        </p>
-                                
-                    </div>
-                
-                
+    <section>
+        <div class="container">
+            <div class="row" id="articles-content">
+                <!-- main content added here from onload script -->
             </div>
         </div>
-    </div>
+    </section>
     <!-- Footer-->
     <!-- Footer-->
     <footer class="border-top" style="background-color: #004f99b2;">
@@ -248,7 +184,7 @@
           var input, filter, list, item, a, i, txtValue;
           input = document.getElementById('myInput');
           filter = input.value.toUpperCase();
-          list = document.getElementById("article-content"); 
+          list = document.getElementById("articles-content"); 
           item = list.getElementsByClassName("post-preview");
           
           // Loop through all list items, and hide those who don't match the search query
@@ -264,26 +200,43 @@
         }
 
         window.onload = function(){ 
-            console.log("here");
-            let contentDiv = document.getElementById("article-content");
-            console.log(articles); 
+            let contentDiv = document.getElementById("articles-content");
             let content = "";
+            
             for (i = 0; i < articles.length; i++) {
-                content += `<div class="post-preview" onclick="openArticle(${i});">
+                
+                let title = articles[i][0].split(" "); 
+                if(title.length >= 10){
+                        title = title.slice(0, 10);
+                        title.push("...");
+                    }
+                    let out_title = title.join(" ");
+
+                let date = articles[i][4];
+                date = date.split(" ");
+                let day = date[1].replace(/,/g, '');
+                let month = date[0].substr(0,3);
+
+                content += `<div class="col-lg-4 col-md-6 mb-2-6 post-preview">
+                <article class="card card-style2">
+                    <div class="card-img">
+                        <img class="rounded-top" src="images/${articles[i][5]}" style="overflow:hidden;width:100%;max-height:160px; " alt="...">
+                        <div class="date"><span>${day}</span>${month}</div> 
+                    </div>
+                    <div class="card-body">
+                        <h3 class="h5"><a href="#!" onclick="openArticle(${i})">${out_title}</a></h3> 
+                        <p class="display-30">${articles[i][1]}</p>
                         
-                        <img src="images/${articles[i][4]}"  style="max-height:250px;width:100%;display:block;margin-left:auto;margin-right:auto;overflow:hidden;object-fit: cover;" />
-                        <a href="#" class="link-unstyled">
-                            <h2 class="post-title">${articles[i][0]}</h2>
-                        </a>
-                        
-                        <p class="post-meta" style="font-size:12px;">
-                            ${articles[i][3]}
-                            <br>
-                            Interviewed by <a href="about-us.html">${articles[i][1]}</a>, edited by <a href="about-us.html">${articles[i][2]}</a>
-                        </p>
-                        <!-- Divider-->
-                        <hr class="my-4" />  
-                    </div>`; 
+                    </div>
+                    <div class="card-footer"> 
+                        <ul>
+                            <li><a href="about-us.html"><i class="fa fa-microphone"></i>${articles[i][2]}</a></li>
+                            <li><a href="about-us.html"><i class="fa fa-pen"></i>${articles[i][3]}</a></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>`; 
+                
             }
             contentDiv.innerHTML = content; 
 
